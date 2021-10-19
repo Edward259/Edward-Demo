@@ -6,6 +6,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         tools:context=".CustomViewActivity">
 
         <com.edward.edwardapplication.view.MyStatusCheckBox
@@ -14,5 +16,44 @@
             android:layout_height="wrap_content"
             app:iconHeight="40dp" />
 
+        <include layout="@layout/divide_line" />
+
+        <com.edward.edwardapplication.view.PasswordEditText
+            android:id="@+id/et_password"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:space="10dp" />
+
+        <com.edward.edwardapplication.view.CustomPasswordEditText
+            android:id="@+id/et_star"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:space="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="add" />
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="delete" />
+
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="clear" />
+
+        </LinearLayout>
     </LinearLayout>
 </layout>

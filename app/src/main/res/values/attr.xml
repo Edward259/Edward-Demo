@@ -5,4 +5,17 @@
         <attr name="iconHeight" format="dimension"/>
         <attr name="iconDrawable" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="PasswordEditText">
+        <attr name="space" format="dimension"/>
+        <attr name="wide" format="dimension"/>
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="strokeColor" format="color"/>
+        <attr name="textLength" format="integer"/>
+        <attr name="textColor" format="color"/>
+        <attr name="circle" format="dimension"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="isPassword" format="boolean"/>
+    </declare-styleable>
+
 </resources>
