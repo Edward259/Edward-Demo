@@ -1,12 +1,12 @@
 package com.edward.edwardapplication;
 
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.edward.edwardapplication.databinding.ActivityMainBinding;
 
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         NOTIFICATION_TEST(NotificationTestActivity.class),
         ALARM_TEST(AlarmActivity.class),
         ADJUST_STATUS_BAR(CustomStatusBarActivity.class),
+        SERVICE_TEST(ServiceTestActivity.class),
         ADB_TEST(ADBActivity.class);
 
         private Class targetActivity;
@@ -65,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
             binding.container.addView(button);
         }
     }
-
 
     private void go(Class targetActivity) {
         startActivity(new Intent(MainActivity.this, targetActivity));
