@@ -45,6 +45,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity
+            android:name=".AnimationActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AnimActivity" />
+
+        <activity
             android:name=".PermissionRequestActivity"
             android:parentActivityName=".MainActivity" />
 
