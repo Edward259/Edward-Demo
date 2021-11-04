@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         ALARM_TEST(AlarmActivity.class),
         ADJUST_STATUS_BAR(CustomStatusBarActivity.class),
         SERVICE_TEST(ServiceTestActivity.class),
+        RXJAVA_TEST(RxjavaTestActivity.class),
+        PERMISSION_TEST(PermissionRequestActivity.class),
         ADB_TEST(ADBActivity.class);
 
         private Class targetActivity;

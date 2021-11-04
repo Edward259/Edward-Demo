@@ -44,15 +44,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".ServiceTestActivity"></activity>
+        <activity
+            android:name=".PermissionRequestActivity"
+            android:parentActivityName=".MainActivity" />
 
+        <activity
+            android:name=".ServiceTestActivity"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".RxjavaTestActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AlarmActivity"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CustomStatusBarActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".NotificationTestActivity"
             android:parentActivityName=".MainActivity" />
