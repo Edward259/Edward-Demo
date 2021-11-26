@@ -3,6 +3,7 @@ package com.edward.edwardapplication;
 import android.app.Application;
 
 import com.edward.edwardapplication.service.ReaderInfoServiceHelper;
+import com.onyx.android.sdk.OnyxSdk;
 
 /**
  * Created by Edward.
@@ -15,5 +16,6 @@ public class EdwardApp extends Application {
     public void onCreate() {
         super.onCreate();
         ReaderInfoServiceHelper.init(this);
+        OnyxSdk.init(this);
     }
 }

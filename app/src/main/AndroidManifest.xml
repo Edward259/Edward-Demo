@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.edward.edwardapplication">
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -35,6 +36,14 @@
     <uses-feature
         android:name="android.hardware.wifi.direct"
         android:required="true" />
+
+    <uses-sdk tools:overrideLibrary="com.onyx.android.sdk.padmu" />
+
+<!--    Feature in android R  https://blog.csdn.net/qq_38666896/article/details/109339009 -->
+    <queries>
+        <package android:name="com.onyx.neoservice" />
+        <package android:name="it.lanman.padmuhome" />
+    </queries>
 
     <application
         android:name=".EdwardApp"

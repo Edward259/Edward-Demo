@@ -1,6 +1,7 @@
 package com.edward.edwardapplication;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +9,9 @@ import androidx.databinding.DataBindingUtil;
 
 import com.edward.edwardapplication.databinding.ActivityServiceTestBinding;
 import com.edward.edwardapplication.service.ReaderInfoServiceHelper;
+import com.onyx.android.sdk.OnyxSdk;
+import com.onyx.android.sdk.padmu.model.FirmwareInfo;
+import com.onyx.android.sdk.padmu.service.Callback;
 
 public class ServiceTestActivity extends AppCompatActivity {
 
@@ -21,6 +25,21 @@ public class ServiceTestActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        binding.cloudFirmwareCheck.setOnClickListener(view -> {
+            OnyxSdk.cloudFirmwareCheck(new Callback<FirmwareInfo>() {
+                @Override
+                public void onNext(FirmwareInfo firmwareInfo) {
+                    if (firmwareInfo.isHasNewFirmware()) {
+                        Log.e("edward", "onNext: " + firmwareInfo.getChangeLog() + firmwareInfo.getUrl());
+                    }
+                }
+
+                @Override
+                public void onError(Throwable throwable) {
+                    Log.e("edward", "cloudFirmwareCheck onError: " + throwable.getMessage() );
+                }
+            });
+        });
         binding.fetchVendorId.setOnClickListener(view -> {
             String vendorId = ReaderInfoServiceHelper.getInstance().test11();
             Toast.makeText(ServiceTestActivity.this, vendorId, Toast.LENGTH_LONG).show();
