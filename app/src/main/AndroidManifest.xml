@@ -53,6 +53,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <activity
+            android:name=".FunctionTestActivity"
+            android:parentActivityName=".MainActivity"/>
+
         <activity
             android:name=".AnimationActivity"
             android:parentActivityName=".MainActivity"

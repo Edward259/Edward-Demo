@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         RXJAVA_TEST(RxjavaTestActivity.class),
         PERMISSION_TEST(PermissionRequestActivity.class),
         ANIMATION_TEST(AnimationActivity.class),
+        FUNCTION_TEST(FunctionTestActivity.class),
         ADB_TEST(ADBActivity.class);
 
         private Class targetActivity;

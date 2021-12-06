@@ -10,8 +10,8 @@ import androidx.databinding.DataBindingUtil;
 import com.edward.edwardapplication.databinding.ActivityServiceTestBinding;
 import com.edward.edwardapplication.service.ReaderInfoServiceHelper;
 import com.onyx.android.sdk.OnyxSdk;
-import com.onyx.android.sdk.padmu.model.FirmwareInfo;
-import com.onyx.android.sdk.padmu.service.Callback;
+import com.onyx.android.sdk.padmu.model.Firmware;
+import com.onyx.android.sdk.rx.RxCallback;
 
 public class ServiceTestActivity extends AppCompatActivity {
 
@@ -26,11 +26,11 @@ public class ServiceTestActivity extends AppCompatActivity {
 
     private void initView() {
         binding.cloudFirmwareCheck.setOnClickListener(view -> {
-            OnyxSdk.cloudFirmwareCheck(new Callback<FirmwareInfo>() {
+            OnyxSdk.cloudFirmwareCheck(this, new RxCallback<Firmware>() {
                 @Override
-                public void onNext(FirmwareInfo firmwareInfo) {
-                    if (firmwareInfo.isHasNewFirmware()) {
-                        Log.e("edward", "onNext: " + firmwareInfo.getChangeLog() + firmwareInfo.getUrl());
+                public void onNext(Firmware firmware) {
+                    if (firmware.isResultFirmwareValid()) {
+                        Log.e("edward", "onNext: " + firmware.getChangeLog() + firmware.getUrl());
                     }
                 }
 
