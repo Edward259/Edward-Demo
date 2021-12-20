@@ -10,8 +10,9 @@ import androidx.databinding.DataBindingUtil;
 import com.edward.edwardapplication.databinding.ActivityServiceTestBinding;
 import com.edward.edwardapplication.service.ReaderInfoServiceHelper;
 import com.onyx.android.sdk.OnyxSdk;
-import com.onyx.android.sdk.padmu.model.Firmware;
-import com.onyx.android.sdk.rx.RxCallback;
+import com.onyx.android.sdk.padmu.common.ContentException;
+import com.onyx.android.sdk.padmu.model.FirmwareInfo;
+import com.onyx.android.sdk.padmu.service.Callback;
 
 public class ServiceTestActivity extends AppCompatActivity {
 
@@ -26,17 +27,19 @@ public class ServiceTestActivity extends AppCompatActivity {
 
     private void initView() {
         binding.cloudFirmwareCheck.setOnClickListener(view -> {
-            OnyxSdk.cloudFirmwareCheck(this, new RxCallback<Firmware>() {
+            OnyxSdk.cloudFirmwareCheck(new Callback<FirmwareInfo>() {
                 @Override
-                public void onNext(Firmware firmware) {
-                    if (firmware.isResultFirmwareValid()) {
+                public void onCompleted(FirmwareInfo firmware) {
+                    if (firmware.isHasNewFirmware()) {
                         Log.e("edward", "onNext: " + firmware.getChangeLog() + firmware.getUrl());
                     }
+
                 }
 
                 @Override
-                public void onError(Throwable throwable) {
-                    Log.e("edward", "cloudFirmwareCheck onError: " + throwable.getMessage() );
+                public void onError(ContentException exception) {
+                    Log.e("edward", "cloudFirmwareCheck onError: " + exception.getMessage());
+
                 }
             });
         });
