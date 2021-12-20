@@ -1,6 +1,8 @@
 package com.edward.edwardapplication;
 
 import android.annotation.SuppressLint;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +41,10 @@ public class FunctionTestActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     switch (function) {
                         case TEST_1:
+                            Intent intent = new Intent();
+                            ComponentName component = new ComponentName("com.onyx.screenresourcemanager", "com.onyx.screenresourcemanager.MainActivity");
+                            intent.setComponent(component);
+                            startActivity(intent);
                             break;
                         case TEST_2:
                             break;
