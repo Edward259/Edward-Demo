@@ -55,7 +55,10 @@ dependencies {
     implementation "com.alibaba:fastjson:1.1.70.android"
     implementation 'io.reactivex.rxjava3:rxjava:3.1.2'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    implementation('com.onyx.android.sdk:onyxsdk-base:1.6.9')
+    implementation('com.onyx.android.sdk:onyxsdk-base:1.6.9'){
+        exclude group: 'com.onyx.android.sdk', module: 'onyxsdk-device'
+    }
+    implementation('com.onyx.android.sdk:onyxsdk-padmu:0.0.1')
     api "com.alibaba:fastjson:1.1.70.android"
     api "com.squareup.retrofit2:retrofit:2.1.0"
 

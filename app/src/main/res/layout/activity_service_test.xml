@@ -17,7 +17,7 @@
 
         <Button
             android:id="@+id/cloud_firmware_check"
-            android:text="Fetch vendor id"
+            android:text="cloud firmware check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

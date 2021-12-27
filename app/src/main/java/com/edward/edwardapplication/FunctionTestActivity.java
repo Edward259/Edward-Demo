@@ -42,7 +42,7 @@ public class FunctionTestActivity extends AppCompatActivity {
                     switch (function) {
                         case TEST_1:
                             Intent intent = new Intent();
-                            ComponentName component = new ComponentName("com.onyx.screenresourcemanager", "com.onyx.screenresourcemanager.MainActivity");
+                            ComponentName component = new ComponentName("com.onyx.screenmanager", "com.onyx.screenmanager.MainActivity");
                             intent.setComponent(component);
                             startActivity(intent);
                             break;

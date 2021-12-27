@@ -32,8 +32,9 @@ public class ServiceTestActivity extends AppCompatActivity {
                 public void onCompleted(FirmwareInfo firmware) {
                     if (firmware.isHasNewFirmware()) {
                         Log.e("edward", "onNext: " + firmware.getChangeLog() + firmware.getUrl());
+                    } else {
+                        Log.e("edward", "onCompleted: no new firmware");
                     }
-
                 }
 
                 @Override
